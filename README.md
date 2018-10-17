@@ -24,9 +24,9 @@ Be sure hashlist.txt is unestiting or void when you launch this program.
 ## find_hash.rb
 To launch this algorithm, you need to be sure hash_calculating has been executed before. If you execute the program:
 
-1. It uses a hash function (sha256, md5 etc..) and a hash value (you can manually create using a hash geenrator or if you intercept it in the network).
-2. Using a function and passing a size as an argument, it tries to brute force the hash value, using all the hash values already calculated using the hash_calculating.rb function.
+1. It uses a hash value (you can manually create using a hash geenrator or if you intercept it in the network).
+2. Using a function and passing a size as an argument, it tries to find the hash value, using all the hash values in hashlist.txt already created using the hash_calculating.rb function.
 
 ```
-ruby find_hash.rb md5 1E262CD7D110812F5726055A6E672B92CDE43648B76ADFF51A12441FBDF7E667
+ruby find_hash.rb 080F651E3FCCA17DF3A47C2CECFCB880
 ````
