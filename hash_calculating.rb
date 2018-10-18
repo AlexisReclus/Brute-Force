@@ -14,23 +14,24 @@ for i in 1..len
 
 	while (my_pass.join.to_s != Array.new(i,last_character).join.to_s)
 
-		for j in 0..i-1
-			my_pass[j] = alphanum[array[j]]
+		for l in 0..i-1
+			my_pass[l] = alphanum[array[l]]
 		end
-		array[j] = (array[j] + 1);
+
+		array[l] = (array[l] + 1);
 
 		result = OpenSSL::Digest.hexdigest(hash_algorithm, my_pass.join.to_s)
 		#puts result
 
 		open('hashlist.txt','a') { |f|
-		f.puts result
+		f.puts my_pass.join.to_s + " " + result
 		}
 
 		puts my_pass.join.to_s
 
-		for j in 0..array.length
+		for j in 0..array.length-1
 			if (array[j] == alphanum.length)
-				for k in j..array.length
+				for k in j..array.length-1
 					array[k] = 0
 				end
 				array[j-1] += 1; 
